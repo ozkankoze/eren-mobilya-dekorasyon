@@ -1,0 +1,296 @@
+{
+  "antre-lamelli": {
+    "width": 1024,
+    "height": 1536,
+    "widths": [
+      480,
+      640,
+      768,
+      1024
+    ]
+  },
+  "antre-organik-ayna": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "antre-oturakli": {
+    "width": 1122,
+    "height": 1402,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1122
+    ]
+  },
+  "banyo-antrasit": {
+    "width": 1122,
+    "height": 1402,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1122
+    ]
+  },
+  "banyo-kompakt": {
+    "width": 1122,
+    "height": 1402,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1122
+    ]
+  },
+  "banyo-yesil-altin": {
+    "width": 1254,
+    "height": 1029,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1254
+    ]
+  },
+  "banyo-yuvarlak-ayna": {
+    "width": 1122,
+    "height": 1402,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1122
+    ]
+  },
+  "cocuk-odasi-ayicik": {
+    "width": 1312,
+    "height": 847,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1312
+    ]
+  },
+  "mutfak-beyaz-lake": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "mutfak-dalgali-ada": {
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1536
+    ]
+  },
+  "mutfak-dalgali-ada-dikey": {
+    "width": 737,
+    "height": 1024,
+    "widths": [
+      420,
+      640,
+      737
+    ]
+  },
+  "mutfak-krem-mat": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "mutfak-yesil-krem": {
+    "width": 1312,
+    "height": 1019,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1312
+    ]
+  },
+  "mutfak-yuvarlak-ada": {
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1536
+    ]
+  },
+  "ticari-cilt-bakim": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "ticari-kuafor": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "ticari-lounge": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "ticari-makyaj": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "ticari-manikur": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "ticari-resepsiyon": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "tv-acik-mese": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "tv-fluted-gri": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "tv-krem-fluted": {
+    "width": 1536,
+    "height": 819,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1536
+    ]
+  },
+  "yatak-gri-lake": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "yatak-kemerli": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "yatak-koyu-ceviz": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  },
+  "yatak-sicak-mese": {
+    "width": 1402,
+    "height": 1122,
+    "widths": [
+      480,
+      640,
+      768,
+      1100,
+      1402
+    ]
+  }
+}

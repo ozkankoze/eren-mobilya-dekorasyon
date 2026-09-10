@@ -1,0 +1,551 @@
+/* ------------------------------------------------------------------ */
+/* YÖNETİM PANELİ                                                      */
+/* Siteden bağımsız, kendi içinde kapalı bir arayüz. Site stillerini    */
+/* değiştirmez; tüm sınıflar `yp-` ön ekiyle başlar.                    */
+/* ------------------------------------------------------------------ */
+
+.yp {
+  --yp-bg: #f5f4f1;
+  --yp-card: #ffffff;
+  --yp-ink: #1b1a18;
+  --yp-soft: #6f6a63;
+  --yp-line: #e2ded7;
+  --yp-accent: #1b1a18;
+  --yp-ok: #1f7a4d;
+  --yp-err: #b3261e;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--yp-bg);
+  color: var(--yp-ink);
+  font-family: "Inter Variable", system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+
+.yp *,
+.yp *::before,
+.yp *::after {
+  box-sizing: border-box;
+}
+
+.yp__wrap {
+  max-width: 940px;
+  margin-inline: auto;
+  padding: 20px 16px 96px;
+}
+
+@media (min-width: 720px) {
+  .yp__wrap {
+    padding: 32px 24px 120px;
+  }
+}
+
+/* ---------- Üst bar ---------- */
+
+.yp__bar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  background: rgba(245, 244, 241, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--yp-line);
+}
+
+.yp__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.yp__brand strong {
+  font-family: "Manrope Variable", system-ui, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.yp__brand span {
+  font-size: 12px;
+  color: var(--yp-soft);
+}
+
+/* ---------- Sekmeler ---------- */
+
+.yp__tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 24px 0 20px;
+}
+
+.yp__tab {
+  appearance: none;
+  border: 1px solid var(--yp-line);
+  background: var(--yp-card);
+  color: var(--yp-soft);
+  font: inherit;
+  font-size: 14px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.yp__tab:hover {
+  color: var(--yp-ink);
+}
+
+.yp__tab[aria-selected="true"] {
+  background: var(--yp-accent);
+  border-color: var(--yp-accent);
+  color: #fff;
+}
+
+/* ---------- Yeni kayıt ekleme çubuğu ---------- */
+
+.yp__ekle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 0 0 20px;
+}
+
+.yp-btn--ekle {
+  font-size: 14px;
+}
+
+.yp-btn--ekle span {
+  font-size: 17px;
+  line-height: 1;
+  margin-right: 4px;
+}
+
+.yp__sayac {
+  font-size: 13px;
+  color: var(--yp-soft);
+}
+
+.yp-bos {
+  border: 1px dashed var(--yp-line);
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--yp-soft);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ---------- Kart ---------- */
+
+.yp__list {
+  display: grid;
+  gap: 16px;
+}
+
+.yp-card {
+  background: var(--yp-card);
+  border: 1px solid var(--yp-line);
+  border-radius: 14px;
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 720px) {
+  .yp-card {
+    grid-template-columns: 240px 1fr;
+    padding: 20px;
+    gap: 24px;
+  }
+}
+
+.yp-card__media {
+  position: relative;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eceae6;
+  aspect-ratio: 4 / 3;
+}
+
+.yp-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Yeni kayıt formu — henüz fotoğraf seçilmemişken */
+.yp-card--yeni {
+  border-color: var(--yp-accent);
+  box-shadow: 0 1px 0 var(--yp-accent);
+}
+
+.yp-card__bosgorsel {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+  color: var(--yp-soft);
+  border: 1px dashed var(--yp-line);
+  border-radius: 10px;
+}
+
+.yp-card__rozet {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(27, 26, 24, 0.82);
+  color: #fff;
+}
+
+.yp-card__body {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-width: 0;
+}
+
+.yp-card__head h2 {
+  margin: 0;
+  font-family: "Manrope Variable", system-ui, sans-serif;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+
+.yp-card__head p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--yp-soft);
+}
+
+/* ---------- Form alanları ---------- */
+
+.yp-alan {
+  display: grid;
+  gap: 6px;
+}
+
+.yp-alan > span {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--yp-soft);
+}
+
+.yp-alan input[type="text"],
+.yp-alan textarea,
+.yp-alan select {
+  width: 100%;
+  font: inherit;
+  font-size: 15px;
+  color: var(--yp-ink);
+  background: #fbfaf8;
+  border: 1px solid var(--yp-line);
+  border-radius: 9px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.yp-alan select {
+  appearance: none;
+  cursor: pointer;
+  /* Küçük ok işareti — dış dosya gerektirmesin diye satır içi SVG */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236f6a63' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px 8px;
+  padding-right: 34px;
+}
+
+.yp-alan input[type="text"]:focus-visible,
+.yp-alan textarea:focus-visible,
+.yp-alan select:focus-visible,
+.yp-dosya:focus-within {
+  outline: 2px solid var(--yp-accent);
+  outline-offset: 1px;
+}
+
+.yp-ipucu {
+  font-size: 12px;
+  color: var(--yp-soft);
+  word-break: break-all;
+}
+
+/* İki alanı yan yana koyan satır (yer + yıl) — dar ekranda alt alta iner */
+.yp-ikili {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 520px) {
+  .yp-ikili {
+    grid-template-columns: 1fr 140px;
+  }
+}
+
+.yp-onay {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.yp-onay input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: var(--yp-accent);
+  flex: none;
+}
+
+.yp-alan textarea {
+  min-height: 88px;
+  line-height: 1.5;
+}
+
+.yp-dosya {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--yp-soft);
+}
+
+.yp-secbtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--yp-line);
+  background: #fbfaf8;
+  color: var(--yp-ink);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.yp-secbtn:hover {
+  background: #f2efea;
+}
+
+/* Gerçek input görünmez ama klavyeyle odaklanabilir kalır */
+.yp-secbtn input[type="file"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.yp-secbtn:focus-within {
+  outline: 2px solid var(--yp-accent);
+  outline-offset: 1px;
+}
+
+.yp-dosya__ad {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.yp-eylem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* ---------- Butonlar ---------- */
+
+.yp-btn {
+  appearance: none;
+  border: 1px solid var(--yp-accent);
+  background: var(--yp-accent);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.yp-btn:hover {
+  opacity: 0.86;
+}
+
+.yp-btn[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.yp-btn--sade {
+  background: transparent;
+  color: var(--yp-soft);
+  border-color: var(--yp-line);
+  font-weight: 500;
+}
+
+.yp-btn--sade:hover {
+  color: var(--yp-ink);
+}
+
+.yp-btn--tehlike {
+  background: transparent;
+  color: var(--yp-err);
+  border-color: #e6c4c1;
+}
+
+.yp-btn--tehlike:hover {
+  background: var(--yp-err);
+  border-color: var(--yp-err);
+  color: #fff;
+  opacity: 1;
+}
+
+/* ---------- Silme onayı ---------- */
+
+.yp-onaykutu {
+  border: 1px solid #e6c4c1;
+  background: #fdf4f3;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.yp-onaykutu p {
+  margin: 0;
+  font-size: 14px;
+  color: #7a2019;
+}
+
+.yp-onaykutu__eylem {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.yp-onaykutu .yp-btn--tehlike {
+  background: var(--yp-err);
+  border-color: var(--yp-err);
+  color: #fff;
+}
+
+.yp-onaykutu .yp-btn--sade {
+  background: #fff;
+}
+
+/* ---------- Durum mesajları ---------- */
+
+.yp-durum {
+  font-size: 13px;
+  margin: 0;
+}
+
+.yp-durum--ok {
+  color: var(--yp-ok);
+}
+
+.yp-durum--err {
+  color: var(--yp-err);
+}
+
+.yp-uyari {
+  border: 1px solid #e6d8b8;
+  background: #fdf8ec;
+  color: #6b5220;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+.yp-uyari code {
+  font-size: 13px;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.yp-not {
+  font-size: 13px;
+  color: var(--yp-soft);
+  margin: 0 0 20px;
+}
+
+/* ---------- Giriş ekranı ---------- */
+
+.yp-giris {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.yp-giris__kutu {
+  width: 100%;
+  max-width: 360px;
+  background: var(--yp-card);
+  border: 1px solid var(--yp-line);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.yp-giris__kutu h1 {
+  margin: 0;
+  font-family: "Manrope Variable", system-ui, sans-serif;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.yp-giris__kutu p {
+  margin: -8px 0 0;
+  font-size: 13px;
+  color: var(--yp-soft);
+}
+
+.yp-giris__kutu input[type="password"] {
+  width: 100%;
+  font: inherit;
+  font-size: 16px; /* iOS'ta odaklanınca sayfa yakınlaşmasın */
+  background: #fbfaf8;
+  border: 1px solid var(--yp-line);
+  border-radius: 9px;
+  padding: 11px 12px;
+}
+
+.yp-giris__kutu .yp-btn {
+  width: 100%;
+}
