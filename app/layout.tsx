@@ -98,16 +98,18 @@ export default function RootLayout({
    * preload API'si kullanılır: Next bunu <head>'e tek seferde koyar, elle
    * yazılan etiket ise hidrasyondan sonra ikinci kez ekleniyordu.
    */
-  ReactDOM.preload("/fonts/inter-tr.woff2", {
-    as: "font",
-    type: "font/woff2",
-    crossOrigin: "anonymous",
-  });
-  ReactDOM.preload("/fonts/manrope-tr.woff2", {
-    as: "font",
-    type: "font/woff2",
-    crossOrigin: "anonymous",
-  });
+  for (const dosya of [
+    "/fonts/inter-tr-latin.woff2",
+    "/fonts/inter-tr-ext.woff2",
+    "/fonts/manrope-tr-latin.woff2",
+    "/fonts/manrope-tr-ext.woff2",
+  ]) {
+    ReactDOM.preload(dosya, {
+      as: "font",
+      type: "font/woff2",
+      crossOrigin: "anonymous",
+    });
+  }
 
   return (
     <html lang="tr">
